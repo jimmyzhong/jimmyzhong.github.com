@@ -4,7 +4,7 @@
   <title><![CDATA[izhong.me Blog]]></title>
   <link href="http://jimmyzhong.github.com/atom.xml" rel="self"/>
   <link href="http://jimmyzhong.github.com/"/>
-  <updated>2013-03-20T22:17:24+08:00</updated>
+  <updated>2013-03-20T22:20:23+08:00</updated>
   <id>http://jimmyzhong.github.com/</id>
   <author>
     <name><![CDATA[jimmy zhong]]></name>
@@ -14,19 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[First Blog]]></title>
+    <title type="html"><![CDATA[first1 blog]]></title>
     <link href="http://jimmyzhong.github.com/blog/2013/03/20/first-blog/"/>
-    <updated>2013-03-20T00:00:00+08:00</updated>
+    <updated>2013-03-20T22:19:00+08:00</updated>
     <id>http://jimmyzhong.github.com/blog/2013/03/20/first-blog</id>
-    <content type="html"><![CDATA[<p>﻿&#8212;
-layout: post
-title: &#8220;个人博客建站记录&#8221;
-date: 2013-03-20 21:51
-comments: true</p>
-
-<h2>categories: </h2>
-
-<p>izhong个人博客建站记录
+    <content type="html"><![CDATA[<p>izhong个人博客建站记录
 时间一分一秒地过去，总想留下点什么。于是买了个域名，建了个博客。
 一、购买域名<br/>
 我使用的是godaddy（http://www.godaddy.com/），</p>
