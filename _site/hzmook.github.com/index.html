@@ -1,0 +1,331 @@
+<div class='home-box' id='home-left'>
+  <h2><a href='atom.xml' class='float-right'
+      ><img src='/images/subscribe-icon.gif' alt='Subscribe'/></a
+      >最新博客（<a href='/blog.html'>更多</a>）</h2>
+  
+
+  <div class='post'>
+    <span class='date'>06 Aug 2012</span>
+    <h1><a href='/hzmook.github.com/2012/08/06/vim-common-command.html'>VIM常用命令</a></h1>
+    <div class='body'><h4>插入模式</h4>
+
+<pre><code>i = insert mode at cursor
+I = insert at the beginning of line
+a = append after the cursor
+A = append at the end of the line
+o = open blank line below current line
+O = open blank line above current line
+Esc = exit insert mode
+</code></pre>
+
+<h4>光标移动</h4>
+
+<pre><code>h,j,k,l = ←, ↓, ↑, →
+ctrl+f = 下一页(forward)
+ctrl+b = 上一页(backward)
+w = 跳到下一个单词的开头
+W = 跳到下一个单词(空白分隔)的开头
+e = 跳到下一个单词的末尾
+E = 跳到下一个单词(空白分隔)的末尾
+b = 跳到前一个单词的开头
+B = 跳到前一个单词(空白分隔)的开头
+0 = 跳到本行行头
+$ = 跳到本行行尾
+^ = 跳到本行第一个非空白字符
+g_ = 跳到本行最后一个非空白字符
+gg = 跳到第一行
+G = 跳到最后一行
+[N]G = 跳到第N行
+`. = 跳到最后编辑的地方
+* = 向下查找当前光标所在位置的字符串
+# = 向上查找当前光标所在位置的字符串
+</code></pre>
+
+<h4>编辑</h4>
+
+<pre><code>u = undo
+ctrl+r = redo
+~ = switch case
+&gt;&gt; = indent line one column right
+&lt;&lt; = indent line one column left
+== = auto-indent current line
+</code></pre>
+
+<h4>剪切与粘贴</h4>
+
+<pre><code>dd = 删除当前行，并把删除的行存到剪贴板里
+x = 删除当前字符
+X = 删除前一个字符
+dw = delete to end of word
+D = delete to end of line
+yy = 复制当前行
+[N]yy = 复制N行
+yw = copy to end of word
+y$ = copy to end of line
+p = 在光标位置之后粘贴
+P = 在光标位置之前粘贴
+</code></pre>
+
+<h4>查找</h4>
+
+<pre><code>/pattern = search for pattern
+?pattern = search backwards for pattern
+n = repeat search in same direction
+N = repeat search in opposite direction
+</code></pre>
+
+<h4>退出</h4>
+
+<pre><code>:w = 保存
+:wq = 保存并退出
+:x = 保存并退出
+:q = 退出，有改动未保存时退出失败
+:q! = 强制退出
+</code></pre>
+
+<hr />
+
+<p><a href="/images/post/vim.png">VIM CheetSheet</a></p>
+
+<hr />
+</div>
+    <a href='/hzmook.github.com/2012/08/06/vim-common-command.html#disqus_thread'>View Comments</a>
+  </div>
+
+  <div class='post'>
+    <span class='date'>04 Jul 2012</span>
+    <h1><a href='/hzmook.github.com/2012/07/04/a-disqus-use-problem.html'>一个DISQUS的使用问题</a></h1>
+    <div class='body'><p>初次使用DISQUS。</p>
+
+<p>有评论的页面中还是显示“0 Comments 和 0 Reactions”，郁闷了很久。</p>
+
+<p>今天终于找到了原因，将下面这一行：</p>
+
+<pre><code>var disqus_url = "http://hzmook.github.com//hzmook.github.com/2012/07/04/a-disqus-use-problem.html";
+</code></pre>
+
+<p>修改为：</p>
+
+<pre><code>var disqus_url = "http://hzmook.github.com/hzmook.github.com/2012/07/04/a-disqus-use-problem.html";
+</code></pre>
+
+<p>，即后者比前者少一个“/”，即可。</p>
+</div>
+    <a href='/hzmook.github.com/2012/07/04/a-disqus-use-problem.html#disqus_thread'>View Comments</a>
+  </div>
+
+  <div class='post'>
+    <span class='date'>01 Jul 2012</span>
+    <h1><a href='/hzmook.github.com/2012/07/01/use-jekyll-build-blog-on-github.html'>使用Jekyll在Github上搭建博客</a></h1>
+    <div class='body'><p>Jekyll是一个使用Ruby编写的静态站点生成工具，使用Liquid模板渲染引擎，支持Markdown和Textile标记语言，并且可以为所有以 .html、.markdown、.textile扩展名结尾的文件使用YAML配置，内置语法高亮功能。而Github的Pages服务可以为每个Github主机上的仓库提供静态页面服务，并且Pages服务支持Jekyll。因为Github Pages有两种Pages，分别是用户页面和项目页面，所以我们可以使用用户页面来创建自己的Blog。</p>
+
+<p>在开始前，请确保你已经有了Github账号和Git的正确配置。没有的朋友可以先移步<a href="https://github.com/plans">Github注册</a>并<a href="http://help.github.com/win-set-up-git/">安装配置Git</a>。</p>
+
+<p>首先，创建你的 Blog 仓库 username(请确保跟你的账号名相同).github.com:</p>
+
+<pre>
+  <code>$ mkdir username.github.com
+  $ cd username.github.com</code>
+</pre>
+
+
+<p>新建一个 index.html 文件，像下面这样:</p>
+
+<div>
+  <pre><code class='html'>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Hello&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;Hello!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+
+
+<p>初始化仓库、提交并push到Github:</p>
+
+<pre>
+  <code>$ git init
+  $ git add .
+  $ git commit -a -m 'init commit.'
+  $ git remote add origin
+  $ git push origin master</code>
+</pre>
+
+
+<p>现在你打开 username.github.com 就可以看到刚才新建的页面了，就是这么简单。当然也可以为你的Blog仓库绑定独立域名，具体做法就是：</p>
+
+<ol>
+<li>在你的仓库中新建内容为 www.youdomain.com 的 CNAME 文件；</li>
+<li>在你的域名管理页或者是DNS解析的地方，增加一个记录，记录类别为CNAME(Alias)类型.</li>
+</ol>
+
+
+<p class="note">*Note：如果你在CNAME中填写的是顶级域名，就得设置DNS的记录类别为A(Host)型，并设置主机为207.97.227.245。详细介绍请移步Github的<a href="http://pages.github.com">Pages</a>页面。</p>
+
+
+<p>接下来我们只需要按照自己的喜好设计页面。首先认识下Jekyll的文件及目录配置:</p>
+
+<pre>
+  .
+  |-- _config.yml
+  |-- _includes
+  |-- _layouts
+  |   |-- default.html
+  |   `-- post.html
+  |-- _plugins
+  |-- _posts
+  |   |-- yyyy-mm-dd-title.markdown
+  |   `-- yyyy-mm-dd-title.markdown
+  |-- _site
+  `-- index.html
+</pre>
+
+
+<h3>_config.yml</h3>
+
+<p>保存Jekyll配置的文件。虽然绝大部分选项可以通过命令行参数指定，但将它们写入配置文件可以使你在每次执行时不必记住它们。</p>
+
+<h3>_includes</h3>
+
+<p>该目录存放可以与<em>layouts和</em>posts混合、匹配并重用的文件。Liquid标签{&#37; include file.ext &#37;}可以用于嵌入文件_includes/file.ext。</p>
+
+<h3>_layouts</h3>
+
+<p>该目录存放用来插入帖子的网页布局模板。页面布局基于类似博客平台的“一个帖子接一个帖子”的原则，通过YAML前置数据定义。Liquid标签用于在页面上插入帖子的文本内容。</p>
+
+<h3>_plugins</h3>
+
+<p>可以增加你自己的插件。</p>
+
+<h3>_posts</h3>
+
+<p>该目录下存放的可以说成是你的“动态内容”。这些文件的格式很重要，它们的文件命名一定要遵循 yyyy-mm-dd-title.html|markdown|textile 规则。每一个帖子的固定链接URL可以作弹性的调整，但帖子的发布日期和转换所使用的标记语言会根据且仅根据文件名中的相应部分来识别。</p>
+
+<h3>_site</h3>
+
+<p>Jekyll自动生成的，所以可以忽略，如果你有在本地安装Jekyll并预览了的话，可以使用.gitignore设置Git停止对本目录的跟踪。</p>
+
+<h3>index.html 和所有的 HTML/Markdown/Textile 文件</h3>
+
+<p>所有的HTML/Markdown/Textile文件都可以包含 YAML 配置，这类文件都会被Jekyll解析。</p>
+
+<p>现在你可以在自己的仓库中配置好你自己的目录及文件，也可以clone我的仓库，然后修改。</p>
+
+<pre>
+  <code>$ git clone https://github.com/hzmook/hzmook.github.com.git</code>
+</pre>
+
+
+<p>修改完后就可以push你的代码到Github上，看到结果了。刚才有说到本地预览，如果你想在本地预览后，确保没错误再push的话，就需要在本地安装Jekyll，下面介绍下Jekyll的安装方法。</p>
+
+<p>一、安装Ruby运行环境和RubyGem:Windows用户只要下载 <a href="http://rubyforge.org/frs/download.php/74298/rubyinstaller-1.9.2-p180.exe" title="点击下载">RubyInstaller</a>。下载安装后请手动升级gem.</p>
+
+<pre>
+  <code>$ gem update --system</code>
+</pre>
+
+
+<p>二、安装DevKit。DevKit是windows平台编译和使用本地C/C++扩展包工具。用来模拟Linux平台下的 <code>make,gcc,sh</code> 进行编译。下载文件后，解压到 `C:\DevKit'，再通过命令行安装:</p>
+
+<pre>
+  <code>$ cd C:\DevKit
+  $ ruby dk.rb init
+  $ ruby dk.rb install</code>
+</pre>
+
+
+<p>三、安装并检查刚才的DevKit安装是否成功。如果成功安装，则DevKit也就安装成功，如果不成功，请重新安装DevKit。</p>
+
+<pre>
+  <code>$ gem install jekyll</code>
+</pre>
+
+
+<p>四、安装Rdiscount，这个是用来解析Markdown标记的解析包。如果你使用Textile的话，就是安装Kramdown。</p>
+
+<pre>
+  <code>$ gem install rdiscount</code>
+</pre>
+
+
+<p>所有的环境和依赖包都安装成功后，进入你的仓库目录，用下面的命令便可启动Jekyll，并在本地预览了，预览地址默认为 <code>127.0.0.1:4000</code>，当然你也可以通过 _config.yml 配置:</p>
+
+<pre>
+  <code>jekyll --server</code>
+</pre>
+
+
+<h3>补充：Windows平台上的中文支持</h3>
+
+<p>在Windows平台上，如果出现类似如下的错误信息：</p>
+
+<pre>
+  <code>c:/Ruby192/lib/ruby/gems/1.9.1/gems/jekyll-0.11.0/lib/jekyll/convertible.rb:29:in `read_yaml’: invalid byte sequence in GBK (ArgumentError)
+  ...</code>
+</pre>
+
+
+<p>可能需要作如下修改：</p>
+
+<p>将文件</p>
+
+<pre>
+  <code>c:/Ruby192/lib/ruby/gems/1.9.1/gems/jekyll-0.11.0/lib/jekyll/convertible.rb</code>
+</pre>
+
+
+<p>中的第27行的内容</p>
+
+<pre>
+  <code>self.content = File.read(File.join(base, name))</code>
+</pre>
+
+
+<p>修改为</p>
+
+<pre>
+  <code>self.content = File.read(File.join(base, name), :encoding => "utf-8")</code>
+</pre>
+
+
+<p>另外，你的日志等源码文件可能都需要保存为无“BOM”的“UTF-8”编码格式。</p>
+
+<div style="margin-top:20px">参考及相关资料：</div>
+
+
+<ul>
+<li><a href="http://pages.github.com/">http://pages.github.com/</a></li>
+<li><a href="https://github.com/mojombo/jekyll/wiki">https://github.com/mojombo/jekyll/wiki</a></li>
+<li><a href="http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/">http://blog.envylabs.com/2009/08/publishing-a-blog-with-github-pages-and-jekyll/</a></li>
+<li><a href="http://chen.yanping.me/cn/blog/2012/03/18/github-pages-step-by-step/">http://chen.yanping.me/cn/blog/2012/03/18/github-pages-step-by-step/</a></li>
+<li><a href="http://www.soimort.org/tech-blog/2011/11/19/introduction-to-jekyll_zh.html">http://www.soimort.org/tech-blog/2011/11/19/introduction-to-jekyll_zh.html</a></li>
+</ul>
+
+</div>
+    <a href='/hzmook.github.com/2012/07/01/use-jekyll-build-blog-on-github.html#disqus_thread'>View Comments</a>
+  </div>
+
+
+</div>
+
+<div class='home-box' id='home-right'>
+  <h2>联系方式</h2>
+  <div class='sidebar'>
+    <div class="sidebar-item">
+    <dl>
+      <dt>邮件：</dt>
+      <dd>hzmook AT gmail DOT com </dd>
+
+      <dt>公司：</dt>
+      <dd><a href="http://www.smartbi.com.cn/" target='_blank' title='广州思迈特'>www.smartbi.com.cn</a></dd>
+
+    </dl>
+
+    </div>
+  </div>
+
+</div>
