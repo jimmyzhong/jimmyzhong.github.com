@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[izhong.me Blog]]></title>
+  <link href="http://jimmyzhong.github.com/atom.xml" rel="self"/>
+  <link href="http://jimmyzhong.github.com/"/>
+  <updated>2013-03-20T22:20:23+08:00</updated>
+  <id>http://jimmyzhong.github.com/</id>
+  <author>
+    <name><![CDATA[jimmy zhong]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[first1 blog]]></title>
+    <link href="http://jimmyzhong.github.com/blog/2013/03/20/first-blog/"/>
+    <updated>2013-03-20T22:19:00+08:00</updated>
+    <id>http://jimmyzhong.github.com/blog/2013/03/20/first-blog</id>
+    <content type="html"><![CDATA[<p>izhong个人博客建站记录
+时间一分一秒地过去，总想留下点什么。于是买了个域名，建了个博客。
+一、购买域名<br/>
+我使用的是godaddy（http://www.godaddy.com/），</p>
+
+<p>点击左上角的登陆按钮，（没有帐户的先注册）购买域名。购买成功后可以看见管理页面，点击LUNCH按钮进入域名管理</p>
+
+<p>找到自己购买后的域名点击进入后，首先设置Nameservers，这里我是用的是Dnspod来管理自己的域名，Dnspod的Dns是F1G1NS1.DNSPOD.NET ，F1G1NS2.DNSPOD.NET 。这样当请求域名解析的时候会自动将解析请求转到Dnspod的域名服务器。
+二、进入Dnspod的网站设置域名解析<br/>
+网址是www.dnspod.cn,登陆后添加自己的域名，设置解析记录，添加一个新的解析，这里主机记录为@表示是主域名，系统记录A，线路类型默认，记录值204.232.175.78，这是github的ip地址。当然也可以使用三级域名，添加CNAME记录。github绑定域名方法，在master分支下建立CNAME文件并输入自己的域名。
+三、进入github添加一个Repository<br/>
+添加的Repository的名字是xxx.github.com其中xxx是申请github的用户名，我添加的Repository是jimmyzhong.github.com，这样当访问jimmyzhong.github.com时将直接读取该Repository下面master分支的内容。
+四、安装Octopress<br/>
+到rubyinstall.org下载ruby的安装包，我下载的是RubyInstaller 1.9.3,一直点击下一步，最后一步将Path加入到系统环境变量勾选。并下载DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe安装。我安装在D：/Devkit
+打开cmd运行：
+d:
+cd Devkit
+ruby dk.rb init
+ruby dk.rb install
+改变环境变量：
+gem sources -a http://ruby.taobao.org/
+gem sources -r http://rubygems.org/
+改变环境变量的代码：
+set LANG=zh_CN.UTF-8
+set LC_ALL=zh_CN.UTF-8
+下载Octopress源码。使用git下载地址为git://github.com/imathis/octopress.git
+进入Octopress目录执行
+gem install bundler
+bundle install
+rake setup_github_pages
+rake install
+rake generate
+rake preview
+rake deploy
+保存源码<br/>
+git add .
+git commit -m &#8216;blog source&#8217;
+git push octopress master</p>
+]]></content>
+  </entry>
+  
+</feed>
