@@ -18,5 +18,12 @@
     {% else %}
       {% capture ASSET_PATH %}{{ BASE_PATH }}/assets/themes/{{ page.theme.name }}{% endcapture %}
     {% endif %}  
+	
+	{% if site.JB.PIC_PATH %}
+      {% assign PIC_PATH = site.JB.PIC_PATH %}
+    {% else %}
+      {% capture PIC_PATH %}{{ BASE_PATH }}/assets/pic/{% endcapture %}
+    {% endif %}  
+	
   {% endif %}
 {% endcapture %}{% assign jbcache = nil %}
