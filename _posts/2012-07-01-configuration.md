@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: default
 title: Configuration
 prev_section: structure
 next_section: frontmatter
