@@ -3,6 +3,7 @@ layout: page
 title: Welcome!
 tagline: Welcome to my blog.
 ---
+##test
 {% include JB/setup %}
     
 ## Posts List
