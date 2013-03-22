@@ -3,10 +3,10 @@ layout: page
 title: Welcome!
 tagline: Welcome to my blog.
 ---
-##test
+
 {% include JB/setup %}
     
-## Posts List
+##  文章列表
 
 <ul class="posts">
   {% for post in site.posts %}
