@@ -32,29 +32,28 @@ mysql > flush privileges;
 
 mysql > quit;退出。
 
-输入IP访问http://10.0.0.5/wordpress/wp-admin/install.php，提示这个错误Your PHP installation appears to be missing the MySQL extension which is required by WordPress.
+输入IP访问http://IP/wordpress/wp-admin/install.php，提示这个错误Your PHP installation appears to be missing the MySQL extension which is required by WordPress.
 
-apt-get install php5-mysql,遇到包冲突使用下面命令强制安装，记得先备份。
+//安装php连接mysql依赖
+apt-get install php5-mysql  遇到包冲突使用下面命令强制安装，记得先备份。
 
+在/etc/php5/conf.d/下建立文件mysql.ini，输入内容extension=mysql.so
+
+//强制指定的安装数据包
 dpkg  -i –force-overwrite /var/cache/apt/archives/php5-common_5.3.3-7+squeeze14_powerpc.deb
 
-重启apache，/etc/init.d/apache restart
+//重启apache
+/etc/init.d/apache restart
 
-重新访问http://10.0.0.5/wordpress/wp-admin/install.php，成功看到wordpress的安装页面了。
-
- 
+重新访问http://IP/wordpress/wp-admin/install.php，成功看到wordpress的安装页面了。
 
 点击创建配置文件试试吧
 
-数据名称：wordpress
-
-用户名：wordpress
-
-密码：test
-
-主机：localhost
-
-表前缀：wp_
+	数据名称：wordpress
+	用户名：wordpress
+	密码：test
+	主机：localhost
+	表前缀：wp_
 
 继续submit
 
@@ -65,3 +64,5 @@ dpkg  -i –force-overwrite /var/cache/apt/archives/php5-common_5.3.3-7+squeeze1
 接下来添加一篇文章。
 
 点击左上角的New，输入标题，内容。Publish。
+
+success?
