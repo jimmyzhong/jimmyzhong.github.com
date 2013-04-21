@@ -5,13 +5,15 @@ title: MBL安装wordpress
 
 首先打开ssh管理窗口。
 
-#安装mysql，
+__1.安装mysql__
+
 apt-get install mysql,mysql-server.
 会提示安装一堆东西，全部安装上，期间会提示输入mysql的root密码。
 
 mysql –u root  -p  登入，会提示输入root的密码,则安装成功。
 
-#安装wordpres
+__2.安装wordpres__
+
 我下载的是wordpress-3.5.1，解压备用。
 也可以直接使用apt-get install wordpress，不过可能是老版本。
 将wordpress上传到/var/www/下。
