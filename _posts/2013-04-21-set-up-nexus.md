@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 搭建Nexus仓库
+title: 搭建Nexus仓库(失败)
 ---
 ###Nexus是什么？
 Nexus是Maven仓库管理器，用来搭建一个本地仓库服务器，这样做便于管理，节省网络资源，速度快！
