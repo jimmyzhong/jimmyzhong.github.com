@@ -77,6 +77,8 @@
 				<span><a href="http://bbs.ecust.edu.cn/" target="_blank">梅陇客栈</a></span>
 				<span><a href="http://www.csdn.net/" target="_blank">csdn</a></span>
 				<span><a href="http://www.51cto.com/" target="_blank">51cto</a></span>
+				<span><a href="https://www.github.com/" target="_blank">github</a></span>
+				<span><a href="https://www.github.com/" target="_blank"></a></span>
 			</li>
 			<li>
 				<span><a href="http://www.dajie.com" target="_blank">大街</a></span>
@@ -87,5 +89,33 @@
 				<span><a href="http://www.icbc.com.cn/ICBCDynamicSite/Charts/AccGold.aspx?dataType=0&dataId=903&picType=3" target="_blank">工行白银</a></span>
 			</li>
 		</ul>
+	</div>
+	<div>
+	<div id="cnblogs_post_body">
+	<script type="text/javascript">
+		var decToHex = function(str) {
+			var res=[];
+			for(var i=0;i < str.length;i++)
+				res[i]=("00"+str.charCodeAt(i).toString(16)).slice(-4);
+			return "\\u"+res.join("\\u");
+		}
+		var hexToDec = function(str) {
+			str=str.replace(/\\/g,"%");
+			return unescape(str);
+		}
+		var encode=function()
+		{
+		document.getElementById('code2').value=decToHex(document.getElementById('code1').value);
+		}
+		var decode=function()
+		{
+		document.getElementById('code2').value=hexToDec(document.getElementById('code1').value);
+		}
+	</script>
+		<textarea id="code1" style="width: 400px; height: 60px;" rows="5" cols="80"></textarea>
+		<br/>
+		<input onclick="encode()" type="button" value="编码" /> &nbsp;&nbsp;&nbsp;<input onclick="decode()" type="button" value="解码" /> <br />
+		<textarea id="code2" style="width: 400px; height: 60px;" rows="5" cols="80"></textarea>
+	</div>
 	</body>
 </html>
